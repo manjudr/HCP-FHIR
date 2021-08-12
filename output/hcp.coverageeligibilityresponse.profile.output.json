@@ -6,7 +6,7 @@
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
-    "valueString" : "./schema/coverageeligibilityresponse.profile.json"
+    "valueString" : "./schema/hcp.coverageeligibilityresponse.profile.json"
   }],
   "issue" : [{
     "severity" : "information",
