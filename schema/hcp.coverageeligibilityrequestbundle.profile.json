@@ -1981,7 +1981,7 @@
         "code" : "CodeableConcept"
       }],
       "fixedCodeableConcept" : {
-        "text" : "CoverageEligibilityResponseDocument"
+        "text" : "CoverageEligibilityRequest"
       },
       "constraint" : [{
         "key" : "ele-1",
@@ -2357,7 +2357,7 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/doc-section-codes"
       },
       "fixedCodeableConcept" : {
-        "text" : "CoverageEligibilityResponseDocument"
+        "text" : "CoverageEligibilityRequest"
         
       }
     },
