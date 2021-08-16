@@ -1980,6 +1980,9 @@
         "type" : [{
           "code" : "CodeableConcept"
         }],
+        "fixedCodeableConcept" : {
+          "text" : "PreAuthorizationRequest" 
+        },
         "constraint" : [{
           "key" : "ele-1",
           "severity" : "error",
@@ -2340,12 +2343,21 @@
         }
       },
       {
+        "id" : "Composition.section",
+        "path" : "Composition.section",
+        "min" : 1,
+        "max" : "1"
+      },
+      {
         "id" : "Composition.section.code",
         "path" : "Composition.section.code",
         "binding" : {
           "strength" : "required",
           "description" : "TODO - value set listing all HCX eObjects including PreAuthorizationRequest for this one.",
           "valueSet" : "http://hl7.org/fhir/ValueSet/doc-section-codes"
+        },
+        "fixedCodeableConcept" : {
+          "text" : "PreAuthorizationRequest" 
         }
       },
       {
@@ -2353,7 +2365,7 @@
         "path" : "Composition.section.entry",
         "type" : [{
           "code" : "Reference",
-          "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/PreAuthorizationRequest"]
+          "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Claim"]
         }]
       }]
     }
