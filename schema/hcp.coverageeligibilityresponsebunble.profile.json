@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "CovereageEligibilityResponseDocument",
   "meta": {
-    "lastUpdated": "2021-08-15T09:29:23.356+11:00"
+    "lastUpdated": "2021-08-16T17:23:00.000+05:30"
   },
   "text": {
     "status": "generated",
@@ -34,7 +34,7 @@
   "version": "4.0.1",
   "name": "CovereageEligibilityResponseDocument",
   "status": "draft",
-  "date": "2021-08-15T09:29:23+11:00",
+  "date": "2021-08-16T17:23:00.000+05:30",
   "publisher": "Health Level Seven International (Structured Documents)",
   "contact": [
     {
@@ -87,8 +87,8 @@
   "kind": "resource",
   "abstract": false,
   "type": "Composition",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DomainResource",
-  "derivation": "specialization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
   "snapshot": {
     "element": [
       {
@@ -646,14 +646,8 @@
         "isModifier": false,
         "isSummary": true,
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "DocumentType"
-            }
-          ],
-          "strength": "preferred",
-          "description": "Type of a composition.",
+          "strength": "required",
+          "description": "Type of a composition. TODO - Value set of all HCX objects.",
           "valueSet": "http://hl7.org/fhir/ValueSet/doc-typecodes"
         },
         "mapping": [
@@ -2084,9 +2078,6 @@
             "code": "BackboneElement"
           }
         ],
-        "fixedCodeableConcept" : {
-          "text" : "CovereageEligibilityResponseDocument"
-        },
         "constraint": [
           {
             "key": "cmp-1",
@@ -2326,6 +2317,9 @@
             "code": "CodeableConcept"
           }
         ],
+        "fixedCodeableConcept": {
+          "text": "CoverageEligibilityResponse"
+        },
         "constraint": [
           {
             "key": "ele-1",
@@ -2339,14 +2333,8 @@
         "isModifier": false,
         "isSummary": false,
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "CompositionSectionType"
-            }
-          ],
-          "strength": "example",
-          "description": "Classification of a section of a composition/document.",
+          "strength": "required",
+          "description": "TODO - value set listing all HCX eObjects including CoverageEligibilityResponse for this one.",
           "valueSet": "http://hl7.org/fhir/ValueSet/doc-section-codes"
         },
         "mapping": [
@@ -2624,7 +2612,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Resource"
+              "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityResponse"
             ]
           }
         ],
@@ -2757,124 +2745,39 @@
       {
         "id": "Composition.type",
         "path": "Composition.type",
-        "short": "Kind of composition (LOINC if possible)",
-        "definition": "Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.",
-        "comment": "For Composition type, LOINC is ubiquitous and strongly endorsed by HL7. Most implementation guides will require a specific LOINC code, or use LOINC as an extensible binding.",
-        "requirements": "Key metadata element describing the composition, used in searching/filtering.",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "DocumentType"
-            }
-          ],
-          "strength": "preferred",
-          "description": "Type of a composition.",
+          "strength": "required",
+          "description": "Type of a composition. TODO - Value set of all HCX objects.",
           "valueSet": "http://hl7.org/fhir/ValueSet/doc-typecodes"
-        },
-        "mapping": [
-          {
-            "identity": "workflow",
-            "map": "Event.code"
-          },
-          {
-            "identity": "w5",
-            "map": "FiveWs.class"
-          },
-          {
-            "identity": "rim",
-            "map": "./code"
-          },
-          {
-            "identity": "cda",
-            "map": ".code"
-          },
-          {
-            "identity": "fhirdocumentreference",
-            "map": "DocumentReference.type"
-          }
-        ]
+        }
       },
       {
-        "id" : "Composition.section",
-        "path" : "Composition.section",
-        "min" : 1,
-        "max" : "1"
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "min": 1,
+        "max": "1"
       },
       {
         "id": "Composition.section.code",
         "path": "Composition.section.code",
-        "short": "Classification of section (recommended)",
-        "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
-        "comment": "The code identifies the section for an automated processor of the document. This is particularly relevant when using profiles to control the structure of the document.   \n\nIf the section has content (instead of sub-sections), the section.code does not change the meaning or interpretation of the resource that is the content of the section in the comments for the section.code.",
-        "requirements": "Provides computable standardized labels to topics within the document.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "CompositionSectionType"
-            }
-          ],
-          "strength": "example",
-          "description": "Classification of a section of a composition/document.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/doc-section-codes",
-          "fixedCodeableConcept" : {
-            "text" : "CovereageEligibilityResponseDocument"
-          }
+          "strength": "required",
+          "description": "TODO - value set listing all HCX eObjects including CoverageEligibilityResponse for this one.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/doc-section-codes"
         },
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "./code"
-          },
-          {
-            "identity": "cda",
-            "map": ".code"
-          }
-        ]
+        "fixedCodeableConcept": {
+          "text": "CoverageEligibilityResponse"
+        }
       },
       {
         "id": "Composition.section.entry",
         "path": "Composition.section.entry",
-        "short": "A reference to data that supports this section",
-        "definition": "A reference to the actual resource from which the narrative in the section is derived.",
-        "comment": "If there are no entries in the list, an emptyReason SHOULD be provided.",
-        "min": 0,
-        "max": "*",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityResponse"
             ]
-          }
-        ],
-        "condition": [
-          "cmp-2"
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": ".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]"
-          },
-          {
-            "identity": "cda",
-            "map": ".entry"
           }
         ]
       }
