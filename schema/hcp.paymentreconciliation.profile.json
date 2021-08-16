@@ -2,7 +2,7 @@
     "resourceType": "StructureDefinition",
     "id": "PaymentReconciliation",
     "meta": {
-      "lastUpdated": "2019-11-01T09:29:23.356+11:00"
+      "lastUpdated": "2021-08-16T22:50:23.356+11:00"
     },
     "text": {
       "status": "generated",
@@ -34,7 +34,7 @@
     "version": "4.0.1",
     "name": "PaymentReconciliation",
     "status": "draft",
-    "date": "2019-11-01T09:29:23+11:00",
+    "date": "2021-08-16T22:29:23+11:00",
     "publisher": "Health Level Seven International (Financial Management)",
     "contact": [
       {
@@ -748,7 +748,7 @@
           "max": "1",
           "base": {
             "path": "PaymentReconciliation.requestor",
-            "min": 1,
+            "min": 0,
             "max": "1"
           },
           "type": [
@@ -791,7 +791,7 @@
           "max": "1",
           "base": {
             "path": "PaymentReconciliation.outcome",
-            "min": 1,
+            "min": 0,
             "max": "1"
           },
           "type": [
@@ -937,7 +937,7 @@
           "max": "1",
           "base": {
             "path": "PaymentReconciliation.paymentIdentifier",
-            "min": 1,
+            "min": 0,
             "max": "1"
           },
           "type": [
