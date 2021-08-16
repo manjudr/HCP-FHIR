@@ -1,6 +1,6 @@
 {
     "resourceType" : "StructureDefinition",
-    "id" : "CovereageEligibilityRequestDocument",
+    "id" : "PreAuthorizationRequest",
     "meta" : {
       "lastUpdated" : "2021-08-14T17:23:00.000+05:30"
     },
@@ -28,7 +28,7 @@
       "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
       "valueCode" : "sd"
     }],
-    "url" : "http://hl7.org/fhir/StructureDefinition/CovereageEligibilityRequestDocument",
+    "url" : "http://hl7.org/fhir/StructureDefinition/PreAuthorizationRequest",
     "version" : "4.0.1",
     "name" : "CovereageEligibilityRequestDocument",
     "status" : "draft",
@@ -1992,7 +1992,7 @@
         "isSummary" : false,
         "binding" : {
           "strength" : "required",
-          "description" : "TODO - value set listing all HCX eObjects including CoverageEligibilityRequest for this one.",
+          "description" : "TODO - value set listing all HCX eObjects including PreAuthorizationRequest for this one.",
           "valueSet" : "http://hl7.org/fhir/ValueSet/doc-section-codes"
         },
         "mapping" : [{
@@ -2226,7 +2226,7 @@
         },
         "type" : [{
           "code" : "Reference",
-          "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest"]
+          "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/PreAuthorizationRequest"]
         }],
         "condition" : ["cmp-2"],
         "constraint" : [{
@@ -2344,7 +2344,7 @@
         "path" : "Composition.section.code",
         "binding" : {
           "strength" : "required",
-          "description" : "TODO - value set listing all HCX eObjects including CoverageEligibilityRequest for this one.",
+          "description" : "TODO - value set listing all HCX eObjects including PreAuthorizationRequest for this one.",
           "valueSet" : "http://hl7.org/fhir/ValueSet/doc-section-codes"
         }
       },
@@ -2353,7 +2353,7 @@
         "path" : "Composition.section.entry",
         "type" : [{
           "code" : "Reference",
-          "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest"]
+          "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/PreAuthorizationRequest"]
         }]
       }]
     }
