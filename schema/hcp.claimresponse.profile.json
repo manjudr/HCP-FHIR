@@ -4890,6 +4890,7 @@
     },
     "differential" : {
       "element" : [{
+        "id": "ClaimResponse.extension:SecondaryInsurer",
         "path": "ClaimResponse.extension",
         "definition": "Secondary Insurer of the patient",
         "comment": "Secondary Insurer of the patient",
