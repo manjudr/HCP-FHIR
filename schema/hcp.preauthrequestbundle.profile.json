@@ -2313,7 +2313,7 @@
         },
         "type" : [{
           "code" : "Reference",
-          "targetProfile" : ["https://github.com/manjudr/HCP-FHIR/blob/main/schema/hcp.signatureextension.profile.json"]
+          "targetProfile" : ["https://github.com/manjudr/HCP-FHIR/blob/main/schema/hcp.signature.extension.json"]
         }],
         "condition" : ["cmp-2"],
         "constraint" : [{
@@ -2482,7 +2482,7 @@
         "max" : "*",
         "type" : [{
           "code" : "Reference",
-          "targetProfile" : ["https://github.com/manjudr/HCP-FHIR/blob/main/schema/hcp.signatureextension.profile.json"]
+          "targetProfile" : ["https://github.com/manjudr/HCP-FHIR/blob/main/schema/hcp.signature.extension.json"]
         }]
       }]
     }
